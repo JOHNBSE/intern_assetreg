@@ -1,4 +1,4 @@
-@import url( );
+
 *{
     margin: 0;
     padding: 0;
@@ -107,4 +107,68 @@ body{
 }
 .stats .card p{
     font-size: 12px;
+}
+.stats .card button{
+    background: #c97c0a;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.stats .card button:hover{
+    background: #755f17;
+}
+.stats .card i{
+    font-size: 22px;
+    padding: 10px;
+}
+
+.tabular-wrapper{
+    background:white ;
+    margin-top: 1 rem;
+    border-radius: 10px;
+    padding: 2rem;
+
+}
+.table-container{
+    width: 100%;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+thead{
+    background: #115f94;
+    color: #fff;
+}
+th{
+    padding: 15px;
+    text-align: left; 
+}
+
+tbody{
+    background: #fff;
+}
+td{
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+}
+tr:nth-child(even){
+    background: #d1cdcd;
+}
+tfoot{
+    background:rgba(113,99, 186, 255);
+    font-weight: bold;
+    color:#fff;
+}
+tfoot td{
+    padding: 15px;
+}
+.table-container button{
+     color: rgb(6, 70, 14);
+     background: none;
+     font-weight: bolder;
+     cursor: pointer;
 }
