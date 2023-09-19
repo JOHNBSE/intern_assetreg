@@ -68,38 +68,42 @@
             <div class="card">
                 <i class="fa fa-user"></i>
                 <h3>Assets</h3>
-                <p>1000</p>
+                <p id="asset_no">1000</p>
                 <button>view all</button>
             </div>
             <div class="card">
                 <i class="fa fa-user"></i>
                 <h3>Locations</h3>
-                <p>1000</p>
+                <p id="location_no">1000</p>
                 <button>view all</button>
             </div>
             <div class="card">
                 <i class="fa fa-user"></i>
                 <h3>Consumables</h3>
-                <p>1000</p>
+                <p id="consumables_no">1000</p>
                 <button>view all</button>
             </div>
             <div class="card">
                 <i class="fa fa-user"></i>
                 <h3>Requests</h3>
-                <p>1000</p>
+                <p id="requests_no">1000</p>
                 <button>view all</button>
             </div>
             <div class="card">
                 <i class="fa fa-user"></i>
                 <h3>Asset Categories</h3>
-                <p>1000</p>
+                <p id="category_no">1000</p>
                 <button>view all</button>
             </div>
         </div>
         <div>
             <label for="search">SEARCH</label>
-            <span><input type="text" placeholder="Lookup Asset by tag or Category"></span>
-            <span><i class="fa fa-search"></i></span>
+            <span><input type="text" placeholder="Lookup Asset by tag or Category" id="searchValue"></span>
+            <select id="searchType">
+                <option value="category">Search by category</option>
+                <option value="serial_no">Search by Serial_no</option>
+            </select>
+            <button id="searchBtn"><span><i class="fa fa-search"></i></span></button>
         </div>
         <div class="tabular-wrapper">
             <h3 class="main-title">Assets</h3>
@@ -116,43 +120,8 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td><button>Edit</button><br><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td><button>Edit</button><br><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td><button>Edit</button><br><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td><button>Edit</button><br><button>Delete</button></td>
-                        </tr>
+                    <tbody id = "tableBody">
+                        
                     </tbody>
                     <tfoot>
                         <tr>
