@@ -3,7 +3,6 @@ const connectDb = require("../db");
 const login = async (req, res) => {
   try {
     const { email, userPassword } = req.body;
-    console.log(`${email} ${userPassword}`);
     const [results, fields] = await connectDb
       .promise()
       .query(`SELECT userID from users where email = '${email}' limit 1`);

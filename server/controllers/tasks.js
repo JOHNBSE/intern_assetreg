@@ -17,8 +17,15 @@ const viewAssets = async (req, res) => {
 
 const addAssets = async (req, res) => {
   try {
-    const { assetID, assetName, serial_no, locationID, status, model, categoryID } =
-      req.body;
+    const {
+      assetID,
+      assetName,
+      serial_no,
+      locationID,
+      status,
+      model,
+      categoryID,
+    } = req.body;
     await connectDb
       .promise()
       .query(
@@ -95,7 +102,6 @@ const updateRequests = async (req, res) => {
 
 const viewRequests = async (req, res) => {
   try {
-    const { requestID } = req.body;
     const requests = await connectDb
       .promise()
       .query(`SELECT * FROM full_requests`);
@@ -105,7 +111,6 @@ const viewRequests = async (req, res) => {
     const openRequests = requests[0].filter(
       (request) => request.status === "Pending"
     );
-
     res.json({
       openRequests: openRequests,
       closedRequests: closedRequests,
@@ -143,6 +148,52 @@ const getTotal = async (req, res) => {
   }
 };
 
+const viewLocations = async (req, res) => {
+  try {
+    const [results, fields] = await connectDb.promise()
+      .execute(`SELECT l.location_name, l.room_no, d.department_name 
+               from location as l join department as d
+               where l.departmentID = d.departmentID
+      `);
+    res.json({
+      results: results,
+    });
+  } catch (err) {
+    res.send(err);
+  }
+};
+
+const viewCategories = async (req, res) => {
+  try {
+    const [results, fields] = await connectDb.promise()
+      .execute(`SELECT * from asset_category
+      `);
+    res.json({
+      results: results,
+    });
+  } catch (err) {
+    res.send(err);
+  }
+};
+
+
+const viewConsumables = async (req, res) => {
+  try {
+    const [results, fields] = await connectDb.promise().execute(`
+      SELECT 
+    co.name, co.quantity, co.purchase_date, ca.category_name
+      FROM
+    consumables AS co
+        JOIN
+    asset_category AS ca ON co.categoryID = ca.categoryID;
+      `);
+    res.json({
+      results: results,
+    });
+  } catch (err) {
+    res.send(err);
+  }
+};
 module.exports = {
   viewAssets,
   addAssets,
@@ -151,4 +202,7 @@ module.exports = {
   search,
   viewRequests,
   getTotal,
+  viewLocations,
+  viewCategories,
+  viewConsumables,
 };

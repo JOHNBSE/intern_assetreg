@@ -38,6 +38,7 @@
             <div class="new_button">
                 <a href="#">Create new</a>
             </div>
+             <div class="back"><button><a href="./dashboard.html">BACK</a></button></div>
         </div>
         <div class="tabular-wrapper">
 
@@ -45,52 +46,13 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Model No</th>
-                            <th>Serial No</th>
-                            <th>Location</th>
-                            <th>Total</th>
-                            <th>Actions</th>
+                            <th>NAME</th>
+                            <th>CATEGORY</th>
+                            <th>QUANTITY</th>
+                            <th>PURCHASE DATE</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td><button>Edit</button><br><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td><button>Edit</button><br><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td><button>Edit</button><br><button>Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td>something</td>
-                            <td><button>Edit</button><br><button>Delete</button></td>
-                        </tr>
+                    <tbody id="consumablesTable">
                     </tbody>
                     <tfoot>
                         <tr>
@@ -105,5 +67,6 @@
 
         </div>
     </section>
+    <script src="../scripts/consumables.js"></script>
 </body>
 </html>
